@@ -19,12 +19,23 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 //GLOBAL VARIABLES
-
+var userChoice;
+var computerChoice;
+var winner;
+var choices = ["rock", "paper", "scissors"]
 
 
 //FUNCTIONS
 
 
-
 // DOCUMENT READY FUNCTION
+/*global $*/
+$(document).ready(function() {
+   $("#button").click(function() {
+           computerChoice = choices[Math.floor(Math.random()*choices.length)];
+           userChoice = $("#user-choice-input").val();
+           console.log("Computer Choice: " + computerChoice);
+           console.log("User Choice: " + userChoice);
+   })
+});
 
