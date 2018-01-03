@@ -22,10 +22,32 @@
 var userChoice;
 var computerChoice;
 var winner;
-var choices = ["rock", "paper", "scissors"]
+var choices = ["Rock", "Paper", "Scissors"]
 
 
 //FUNCTIONS
+
+function getWinner(userChoice, computerChoice) {
+        if (userChoice == computerChoice) {
+                return "Tie";
+        } else if (userChoice == "Rock") {
+                if (computerChoice == "Paper") {
+                        return "Computer";
+                }
+                return "User";
+        } else if (userChoice == "Paper") {
+                if (computerChoice == "Scissors") {
+                        return "Computer";
+                }
+                return "User";
+        } else if (userChoice == "Scissors") {
+                if (computerChoice == "Rock") {
+                        return "Computer";
+                }
+                return "User";
+        }
+        return "Computer";
+}
 
 
 // DOCUMENT READY FUNCTION
@@ -33,9 +55,10 @@ var choices = ["rock", "paper", "scissors"]
 $(document).ready(function() {
    $("#button").click(function() {
            computerChoice = choices[Math.floor(Math.random()*choices.length)];
-           userChoice = $("#user-choice-input").val();
-           console.log("Computer Choice: " + computerChoice);
-           console.log("User Choice: " + userChoice);
-   })
+           userChoice = $("#user-choice-select").find(":selected").text();
+           $("#user-choice").html(userChoice);
+           $("#computer-choice").html(computerChoice);
+           $("#winner").html("Winner: " + getWinner(userChoice, computerChoice));
+   });
 });
 

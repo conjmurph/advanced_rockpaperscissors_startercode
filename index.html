@@ -45,21 +45,33 @@
       </div>
       <br>
       <div class="row">
-        <div id="user-choice" class="col-lg-4">
+        <div id="user-choice-div" class="col-lg-4">
           <h5>User Choice</h5>
+          <p id="user-choice" class="text-center"></p>
         </div>
         <form>
           <div class="col-xs-4">
+              <!--<div class="input-group">-->
+              <!--    <input id="user-choice-input" type="text" class="form-control" placeholder="Rock, Paper or Scissors">-->
+              <!--    <span class="input-group-btn">-->
+              <!--        <button type="button" class="btn btn-default" id="button">Shoot!</button>-->
+              <!--    </span>-->
+              <!--</div>-->
               <div class="input-group">
-                  <input id="user-choice-input" type="text" class="form-control" placeholder="Rock, Paper or Scissors">
-                  <span class="input-group-btn">
-                      <button type="button" class="btn btn-default" id="button">Play!</button>
+                <select class="form-control" id="user-choice-select">
+                  <option>Rock</option>
+                  <option>Paper</option>
+                  <option>Scissors</option>
+                </select>            
+                <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" id="button">Shoot!</button>
                   </span>
               </div>
           </div>
         </form>
-        <div id="computer-choice" class="col-lg-4">
+        <div id="computer-choice-div" class="col-lg-4">
           <h5>Computer Choice</h5>
+          <p id="computer-choice" class="text-center"></p>
         </div>
         <div class="row">
           <div id="winner-box">
